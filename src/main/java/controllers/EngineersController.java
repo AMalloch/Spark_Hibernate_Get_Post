@@ -32,7 +32,7 @@ public class EngineersController {
             Map<String, Object> model = new HashMap<>();
             List<Department> departments = DBHelper.getAll(Department.class);
             model.put("template", "templates/engineers/create.vtl");
-            model.put("engineers", departments);
+            model.put("departments", departments);
             return new ModelAndView(model, "templates/layout.vtl");
             }, new VelocityTemplateEngine());
 
