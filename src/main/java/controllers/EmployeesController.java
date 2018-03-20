@@ -3,6 +3,7 @@ package controllers;
 import db.DBHelper;
 import db.Seeds;
 import models.Employee;
+import models.Engineer;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -17,6 +18,7 @@ public class EmployeesController {
     public static void main(String[] args) {
         staticFileLocation("public");
         ManagersController managersController = new ManagersController();
+        EngineersController engineersController = new EngineersController();
         Seeds.seedData();
 
         get("/employees", (req, res) -> {
