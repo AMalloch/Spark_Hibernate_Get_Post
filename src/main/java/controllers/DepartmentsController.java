@@ -47,13 +47,13 @@ public class DepartmentsController {
         }, new VelocityTemplateEngine());
 
 
-//        delete("/departments/delete/:id", (req,res) ->{
-//            Integer id = Integer.parseInt(req.params(":id"));
-//            Department department = DBHelper.find(id, Department.class);
-//            DBHelper.delete(department);
-//            res.redirect("/departments");
-//            return null;
-//        }, new VelocityTemplateEngine());
+        get("/departments/delete/:departmentId", (req,res) ->{
+            Integer id = Integer.parseInt(req.params(":departmentId"));
+            Department department = DBHelper.find(id, Department.class);
+            DBHelper.delete(department);
+            res.redirect("/departments");
+            return null;
+        }, new VelocityTemplateEngine());
 
 
 //        get("/departments/:id", (req, res) -> {

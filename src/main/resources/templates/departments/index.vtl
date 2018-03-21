@@ -19,7 +19,10 @@
         </tr>
         #foreach($department in $departments)
         <tr>
-            <td>$department.getTitle()</td>
+            <td>$department.getTitle() </td>
+            <td>
+                 <a href="/departments/delete/$department.getId()" class="button center">Remove a Department</a>
+            </td>
         </tr>
         #end
     </table>
