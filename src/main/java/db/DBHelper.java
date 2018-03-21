@@ -102,7 +102,6 @@ public class DBHelper {
         Criteria cr = session.createCriteria(classType);
         cr.add(Restrictions.eq("id", id));
         return getUnique(cr);
-
     }
 
     public static Manager findManagerForDept(Department department) {

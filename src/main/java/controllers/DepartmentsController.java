@@ -9,9 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static spark.Spark.delete;
-import static spark.Spark.get;
-import static spark.Spark.post;
+import static spark.Spark.*;
 
 public class DepartmentsController {
 
@@ -48,13 +46,15 @@ public class DepartmentsController {
             return null;
         }, new VelocityTemplateEngine());
 
-//        delete("/departments/delete/:title", (req,res) ->{
-//            Integer title = Integer.parseInt(req.params("title"));
-//            Department department = DBHelper.find(title, Department.class);
+
+//        delete("/departments/delete/:id", (req,res) ->{
+//            Integer id = Integer.parseInt(req.params(":id"));
+//            Department department = DBHelper.find(id, Department.class);
 //            DBHelper.delete(department);
 //            res.redirect("/departments");
 //            return null;
 //        }, new VelocityTemplateEngine());
+
 
 //        get("/departments/:id", (req, res) -> {
 //            Integer id = Integer.parseInt(req.params(":id"));
@@ -65,6 +65,16 @@ public class DepartmentsController {
 //            return new ModelAndView(model, "templates/layout.vtl");
 //        }, new VelocityTemplateEngine());
 
+
+//        put("/departments/:id", (req, res) -> {
+//            Integer id = Integer.parseInt(req.params(":id"));
+//            Department department = DBHelper.find(id, Department.class);
+//            DBHelper.save(department);
+//            Map<String, Object> model = new HashMap<>();
+//            model.put("template", "templates/departments/index.vtl");
+//            model.put("departments", department);
+//            return new ModelAndView(model, "templates/layout.vtl");
+//        }, new VelocityTemplateEngine());
 
     }
 }
